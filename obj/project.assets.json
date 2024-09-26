@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ponce\\Documents\\GitHub\\SistemaFinanzas\\finanzas.csproj",
-      "projectName": "finanzas",
-      "projectPath": "C:\\Users\\ponce\\Documents\\GitHub\\SistemaFinanzas\\finanzas.csproj",
+      "projectUniqueName": "C:\\Users\\ponce\\projectoFinanzas\\projectoFinanzas.csproj",
+      "projectName": "projectoFinanzas",
+      "projectPath": "C:\\Users\\ponce\\projectoFinanzas\\projectoFinanzas.csproj",
       "packagesPath": "C:\\Users\\ponce\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ponce\\Documents\\GitHub\\SistemaFinanzas\\obj\\",
+      "outputPath": "C:\\Users\\ponce\\projectoFinanzas\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
