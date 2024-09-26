@@ -46,7 +46,7 @@ namespace sistema{
                 this.btnIniciarSesion.Size = new System.Drawing.Size(100, 30);
                 this.btnIniciarSesion.Text = "Iniciar sesión";
                 this.btnIniciarSesion.UseVisualStyleBackColor = true;
-                this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
+                this.btnIniciarSesion.Click += new System.EventHandler(btnIniciarSesion_Click);
                 this.Controls.Add(this.btnIniciarSesion);
 
                 //pantalla inicio de sesion
