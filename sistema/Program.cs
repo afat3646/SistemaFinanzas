@@ -1,5 +1,5 @@
 namespace sistema;
-
+//inicializador de programa general
 static class Program
 {
     /// <summary>

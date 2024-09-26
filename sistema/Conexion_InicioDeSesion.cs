@@ -6,27 +6,25 @@ using MySql.Data.MySqlClient;
 
 namespace sistema{
     public partial class Conexion_IncioDeSesion :  Form{
+
+        //inicializacion de los datos a solicitar
         private TextBox txtcorreo;
         private TextBox txtcontraseña;
         private Button btnIniciarSesion;
-
-        public Conexion_IncioDeSesion(){
-            
-            if(!ProbarConexion()){
-                MessageBox.Show("No se pudo conectar a la base de datos. Cerrando aplicacion");
-                Application.Exit();
-            }
-            else{
-                InitializeLoginComponents();
-            }
-        }
+        //inicializacion y muestralizacion de elementos de pantalla
             private void InitializeLoginComponents(){
 
+                Label lblCorreo = new Label();
+                lblCorreo.Text = "Correo:";
+                lblCorreo.Location = new System.Drawing.Point(100, 30);
+                this.Controls.Add(lblCorreo);
 
                 this.txtcorreo = new System.Windows.Forms.TextBox();
                 this.txtcontraseña = new System.Windows.Forms.TextBox();
                 this.btnIniciarSesion = new System.Windows.Forms.Button();
                 //poner correo configuracion
+                
+
 
                 this.txtcorreo.Location = new System.Drawing.Point(100, 50);
                 this.txtcorreo.Name = "txtCorreo";
@@ -34,6 +32,12 @@ namespace sistema{
                 this.Controls.Add(this.txtcorreo);
 
                 //poner contraseña configuracion
+                Label lblContraseña = new Label();
+                lblContraseña.Text = "contraseña:";
+                lblContraseña.Location = new System.Drawing.Point(100, 80);
+                
+                this.Controls.Add(lblContraseña);
+
                 this.txtcontraseña.Location = new System.Drawing.Point(100, 100);
                 this.txtcontraseña.Name = "txtContraseña";
                 this.txtcontraseña.PasswordChar = '*';
@@ -46,13 +50,14 @@ namespace sistema{
                 this.btnIniciarSesion.Size = new System.Drawing.Size(100, 30);
                 this.btnIniciarSesion.Text = "Iniciar sesión";
                 this.btnIniciarSesion.UseVisualStyleBackColor = true;
-                this.btnIniciarSesion.Click += new System.EventHandler(btnIniciarSesion_Click);
+                this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
                 this.Controls.Add(this.btnIniciarSesion);
 
                 //pantalla inicio de sesion
                 this.ClientSize = new System.Drawing.Size(400, 250);
                 this.Text = "Inicio de sesión";
             }
+            //meotodos para iniciar y validar la sesion
             private bool ProbarConexion(){
                 string connectionString = "Server=localhost;Database=FinanzasBaseDeDatos;User ID=root;Password=Fernaal1;";
                 try
@@ -61,12 +66,12 @@ namespace sistema{
                 {
                     connection.Open();
                     MessageBox.Show("Conexión a la base de datos fue exitosa.");
-                    return true; // La conexión fue exitosa
+                    return true; 
                 }
             }
             catch (Exception)
             {
-                return false; // No se pudo conectar a la base de datos
+                return false; 
             }
             }
             private void btnIniciarSesion_Click(Object sender, EventArgs e){
@@ -75,7 +80,8 @@ namespace sistema{
                 if (ValidarCredenciales(correo, contraseña))
                 {
                 MessageBox.Show("Inicio de sesión exitoso");
-                // Aquí puedes abrir la ventana principal o hacer algo más después del login
+                Cuenta cuentactr = new Cuenta(correo);
+                cuentactr.Show();
                 }
                 else
                 {
@@ -111,6 +117,20 @@ namespace sistema{
             return esValido;
 
             }
+
+        public Conexion_IncioDeSesion(){
+            
+            if(!ProbarConexion()){
+                MessageBox.Show("No se pudo conectar a la base de datos. Cerrando aplicacion");
+                Application.Exit();
+            }
+            else{
+                InitializeLoginComponents();
+            }
+        }
+        
+           
+            
             
         }
 
