@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "npWDqIVUoRY=",
+  "dgSpecHash": "kfTOz1WE6Ao=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ponce\\Documents\\repositorios\\SistemaFinanzas\\sistema\\sistema.csproj",
+  "projectFilePath": "C:\\Users\\ponce\\Documents\\GitHub\\SistemaFinanzas\\sistema\\sistema.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ponce\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\ponce\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",
